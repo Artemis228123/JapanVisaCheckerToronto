@@ -89,7 +89,7 @@ def check_for_openings():
         
         print("Waiting for 'VISA Application' option to be present...")
         # Wait for the element to exist in the DOM, not necessarily be clickable.
-        visa_option_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='event-select']//label[@for='event-16']")))
+        visa_option_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='event-select']//label[contains(., 'VISA Application')]")))
         # Use JavaScript to force the click.
         driver.execute_script("arguments[0].click();", visa_option_element)
         
@@ -102,7 +102,7 @@ def check_for_openings():
 
         print("Waiting for 'Canada Travel Document holders' option to be present...")
         # Wait for the element to exist...
-        details_option_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='plan-select']//label[@for='plan-35']")))
+        details_option_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='plan-select']//label[contains(., 'Canada Travel Document holders')]")))
         # ...then force the click with JavaScript.
         driver.execute_script("arguments[0].click();", details_option_element)
 
